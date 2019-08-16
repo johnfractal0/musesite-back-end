@@ -11,11 +11,7 @@ public class Band {
     private Long id;
     @Column(name="name")
     private String name;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "album_band",
-            joinColumns = @JoinColumn(name = "album_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "band_id",
-                    referencedColumnName = "id"))
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "bands")
     private List<Album> albums;
     public Long getId() {
         return id;

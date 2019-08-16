@@ -15,7 +15,7 @@ public class Album {
 	private Long id;
 	@Column(name="title")
 	private String title;
-	@ManyToMany(targetEntity = Band.class, mappedBy = "albums")
+	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Band> bands;
 	@ManyToMany(targetEntity = Musician.class, mappedBy = "albums")
 	private List<Musician> musicians;
